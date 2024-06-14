@@ -1,0 +1,7 @@
+.item {
+  width: 284px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  margin: 0 12px;
+}

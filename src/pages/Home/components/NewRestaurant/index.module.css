@@ -1,0 +1,15 @@
+.item {
+  width: 382px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.info-head span {
+  background: var(--error-bg);
+  color: var(--error);
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
