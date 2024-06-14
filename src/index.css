@@ -1,17 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary: #136397;
+  --white: #ffffff;
+  --text: #1c1b1e;
+  --gray5: #939094;
+  --gray7: #605D62;
+  --gray8: #48464A;
+  --error: #DB242D;
+  --error-bg: #F8D3D5;
+  --warning: #FEB201;
+  --warning-bg: #FFF7E6;
+  --success: #489B1C;
+  --success-bg: #F0FBE9;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.error {
+  color: var(--error);
+}
+.error-bg {
+  background: var(--error-bg);
+}
+
+.warning {
+  color: var(--warning);
+}
+.warning-bg {
+  background: var(--warning-bg);
+}
+
+.success {
+  color: var(--success);
+}
+.success-bg {
+  background: var(--success-bg);
+}
+
+.gray7-color {
+  color: var(--gray7);
+}
+
+.text-color {
+  color: var(--text);
+}
+
+p{
+  color: var(--text);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.ellipsis2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
