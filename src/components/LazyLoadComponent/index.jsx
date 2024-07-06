@@ -8,10 +8,10 @@ const LazyLoadComponent = ({ children }) => {
     threshold: 0.1,
   });
 
-  const style = {
-    minHeight: "1px",
-    visibility: inView ? "visible" : "hidden",
-  };
+  // const style = {
+  //   minHeight: "1px",
+  //   visibility: inView ? "visible" : "hidden",
+  // };
 
   return (
     <motion.div

@@ -10,6 +10,12 @@ import DeliveryIcon from "./DeliveryIcon";
 import BagIcon from "./BagIcon";
 import HeartIcon from "./HeartIcon";
 import ArrowNarrowRight from "./ArrowNarrowRight";
+import ChevronIcon from "./ChevronIcon";
+import FilterIcon from "./FilterIcon";
+import BusinessplanIcon from "./BusinessplanIcon";
+import ShredderIcon from "./ShredderIcon";
+import MedalIcon from "./MedalIcon";
+import InfoCircleIcon from "./InfoCircleIcon";
 
 export {
   HelpIcon,
@@ -24,4 +30,10 @@ export {
   BagIcon,
   HeartIcon,
   ArrowNarrowRight,
+  ChevronIcon,
+  FilterIcon,
+  BusinessplanIcon,
+  ShredderIcon,
+  MedalIcon,
+  InfoCircleIcon
 };

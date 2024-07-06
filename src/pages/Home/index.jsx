@@ -52,7 +52,7 @@ function HomePage() {
       <div className={cx("content")}>
         <div className={cx("content-main")}>
           <LazyLoadComponent>
-            <div>
+            <div className={cx('search-layout')}>
               <Search />
             </div>
           </LazyLoadComponent>
