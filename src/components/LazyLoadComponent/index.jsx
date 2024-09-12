@@ -8,17 +8,17 @@ const LazyLoadComponent = ({ children }) => {
     threshold: 0.1,
   });
 
-  const style = {
-    minHeight: "1px",
-    visibility: inView ? "visible" : "hidden",
-  };
+  // const style = {
+  //   minHeight: "1px",
+  //   visibility: inView ? "visible" : "hidden",
+  // };
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
     >
       {children}
     </motion.div>

@@ -1,0 +1,148 @@
+.container {
+    padding: 32px 0 64px;
+}
+
+.content {
+    max-width: 1206px;
+    margin: 0 auto;
+}
+
+.search-layout {
+    border-radius: 24px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.banner-title p {
+    color: var(--gray8);
+}
+
+.head-detail {
+    margin-bottom: 48px;
+}
+
+.head-detail h1 {
+    font-size: 40px;
+    line-height: 56px;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.head-detail-left {
+    width: 46%;
+}
+
+.head-detail-right {
+    width: 50%;
+}
+
+.show-more-img {
+    border: 1px solid var(--primary);
+    width: fit-content;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+.main {}
+
+.main-left {
+    width: 66%;
+}
+
+.main-left-txt {
+    font-size: 26px;
+    line-height: 38px;
+    color: var(--text);
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.main-right {
+    width: 34%;
+}
+
+.contact {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: var(--primary);
+}
+
+.map {
+    width: 386px;
+    height: 325px;
+    border: .5px solid var(--gray4);
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map img {
+    width: 100%;
+}
+
+.amenities, .policy, .restaurant-menu, .food {
+    margin-bottom: 48px;
+}
+
+.amenities-container {
+    width: 140px;
+    height: 108px;
+    border: .5px solid var(--gray4);
+    border-radius: 8px;
+    padding: 24px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amenities-image {
+    width: 24px;
+    height: 24px;
+}
+
+.policy-txt p {
+    text-align: justify;
+}
+
+.restaurant-menu-img {
+    display: flex;
+    gap: 20px;
+}
+
+.restaurant-menu-img img{
+    width: 180px;
+    height: 256px;
+}
+
+.food-content img {
+    width: 180px;height: 180px;
+    border-radius: 8px;
+}
+
+.food-content p {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.food-like {
+    padding: 4px 8px;
+    background: #D2EAF9;
+    border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+}
+
+.food-like p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.see-more{
+    width: 136px;
+    height: 40px;
+    border: 1px solid #79767B;
+    border-radius: 8px;
+}

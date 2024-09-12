@@ -13,6 +13,8 @@ body {
   --primary: #136397;
   --white: #ffffff;
   --text: #1c1b1e;
+  --gray2: #E6E1E6;
+  --gray4: #AEAAAF;
   --gray5: #939094;
   --gray7: #605D62;
   --gray8: #48464A;
@@ -22,6 +24,11 @@ body {
   --warning-bg: #FFF7E6;
   --success: #489B1C;
   --success-bg: #F0FBE9;
+  --background: #FAFAFA;
+}
+
+.background {
+  background: var(--background)
 }
 
 .primary {
@@ -61,8 +68,9 @@ p{
   color: var(--text);
 }
 img{
-  width: 100%;
+  max-width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .ellipsis2 {
@@ -71,4 +79,8 @@ img{
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.w50percent {
+  width: 50%;
 }
