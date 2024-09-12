@@ -1,31 +1,32 @@
 import classNames from "classnames/bind";
 import styles from "./index.module.css";
 import { ItemPng } from "~/assets/Images";
-import Evaluate from "../Evaluate";
-import {
-  AddressIcon,
-  BagIcon,
-  DeliveryIcon,
-  FoodIcon,
-  HeartIcon,
-} from "~/assets/Icons";
+import { AddressIcon, HeartIcon } from "~/assets/Icons";
+import ServiceOptions from "~/pages/components/ServiceOptions";
+import Evaluate from "~/pages/components/Evaluate";
+import PropTypes from "prop-types";
 
 const cx = classNames.bind(styles);
 
-function NewRestaurant() {
+function NewRestaurant({ heartIcon = true, types = true, serviceOptions = true, price = true, customCss = true }) {
   return (
-    <div className={cx("item")}>
+    <div className={cx("item", { customCss: customCss, "mx-3": !customCss })}>
       <div className={cx("item-image", "relative")}>
         <img src={ItemPng} alt="" />
-        <div className="absolute top-0 right-0 p-4 cursor-pointer">
-          <HeartIcon />
-        </div>
+        {heartIcon ? (
+          <div className="absolute top-0 right-0 p-4 cursor-pointer">
+            <HeartIcon />
+          </div>
+        ) : null}
       </div>
       <div className={cx("info", "p-2 flex flex-col gap-2")}>
-        <div className={cx("info-head", "flex items-center gap-2")}>
-          <span className="text-xs">Bánh mì</span>
-          <p>Món việt, món Nhật</p>
-        </div>
+        {types ? (
+          <div className={cx("info-head", "flex items-center gap-2")}>
+            <span className="text-xs">Bánh mì</span>
+            <p>Món việt, món Nhật</p>
+          </div>
+        ) : null}
+
         <p className="ellipsis2 font-bold text-lg cursor-pointer">
           Terraço Sky Bar & Restaurant - Khách sạn La Sinfonía Del Rey Hotel &
           Spa
@@ -39,26 +40,26 @@ function NewRestaurant() {
             64, Trần Hưng Đạo, Phú Quốc, Kiên Giang, Việt Nam
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="p-1 flex items-center gap-2 rounded-lg warning-bg">
-            <FoodIcon />
-            <p className="warning">Đặt bàn</p>
+        {serviceOptions ? (
+          <div className="flex items-center gap-4">
+            <ServiceOptions />
           </div>
-          <div className="p-1 flex items-center gap-2 rounded-lg success-bg">
-            <DeliveryIcon />
-            <p className="success">Giao món</p>
-          </div>
-          <div className="p-1 flex items-center gap-2 rounded-lg error-bg">
-            <BagIcon />
-            <p className="error">Lấy hàng</p>
-          </div>
-        </div>
-        <p className="leading-7 text-right">
-          <span className="error font-semibold">50k - 650k</span>/người
-        </p>
+        ) : null}
+        {price ? (
+          <p className="leading-7 text-right">
+            <span className="error font-semibold">50k - 650k</span>/người
+          </p>
+        ) : null}
       </div>
     </div>
   );
 }
 
+NewRestaurant.propTypes = {
+  heartIcon: PropTypes.bool,
+  types: PropTypes.bool,
+  serviceOptions: PropTypes.bool,
+  price: PropTypes.bool,
+  customCss: PropTypes.bool
+};
 export default NewRestaurant;

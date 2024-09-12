@@ -102,3 +102,28 @@ export const OpenSections = {
   restaurantType: true,
   meal: true
 }
+
+export const businessHours = [
+  { title: "Thứ 2", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "Thứ 3", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "Thứ 4", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "Thứ 5", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "Thứ 6", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "Thứ 7", timeStart: "8:00", timeEnd: "20:00" },
+  { title: "CN", timeStart: "8:00", timeEnd: "20:00" },
+]
+
+export const GioiThieu = "Đỗ xe và Wi-Fi luôn miễn phí, vì vậy quý khách có thể giữ liên lạc, đến và đi tùy ý. Nằm ở vị trí trung tâm tại Hải Châu của Đà Nẵng, chỗ nghỉ này đặt quý khách ở gần các điểm thu hút và tùy chọn ăn uống thú vị. Đừng rời đi trước khi ghé thăm The Marble Mountains nổi tiếng. Được xếp hạng 5 sao, chỗ nghỉ chất lượng cao này cho phép khách nghỉ sử dụng mát-xa, xông khô và bồn tắm nước nóng ngay trong khuôn viên.";
+
+
+// export const utilities = [
+//   {key: 1, title: '', type: 1, image: },
+//   {key: 2, title: '', type: 1, image: },
+//   {key: 3, title: '', type: 2, image: },
+//   {key: 4, title: '', type: 2, image: },
+//   {key: 5, title: '', type: 2, image: },
+//   {key: 6, title: '', type: 2, image: },
+//   {key: 7, title: '', type: 2, image: },
+//   {key: 8, title: '', type: 2, image: },
+//   {key: 9, title: '', type: 3, image: },
+// ]

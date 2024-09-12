@@ -5,12 +5,9 @@ import { ItemPng, banner } from "~/assets/Images";
 import { slickSlideType } from "~/contants/contants";
 import CustomSlickSlider from "~/components/CustomSlickSlider";
 import { ArrowNarrowRight } from "~/assets/Icons";
-import {
-  Evaluate,
-  NewRestaurant,
-  RecentlyViewedRestaurants,
-} from "./components";
+import { NewRestaurant } from "./components";
 import LazyLoadComponent from "~/components/LazyLoadComponent";
+import Evaluate from "../components/Evaluate";
 
 const cx = classNames.bind(styles);
 
@@ -39,7 +36,17 @@ function HomePage() {
     </div>
   );
 
-  const recentlyViewedRestaurants = ({ item }) => <RecentlyViewedRestaurants />;
+  const recentlyViewedRestaurants = ({ item }) => (
+    <div style={{ width: 284 }}>
+      <NewRestaurant
+        heartIcon={false}
+        types={false}
+        serviceOptions={false}
+        price={false}
+        customCss={false}
+      />
+    </div>
+  );
 
   return (
     <div className={cx("home")}>
@@ -52,7 +59,7 @@ function HomePage() {
       <div className={cx("content")}>
         <div className={cx("content-main")}>
           <LazyLoadComponent>
-            <div className={cx('search-layout')}>
+            <div className={cx("search-layout")}>
               <Search />
             </div>
           </LazyLoadComponent>
@@ -66,9 +73,7 @@ function HomePage() {
 
           <LazyLoadComponent>
             <div className={cx("featured", "w-full")}>
-              <h2 className={cx("general-title", "mb-10")}>
-                Featured Restaurants
-              </h2>
+              <h2 className={cx("general-title", "mb-10")}>Nhà hàng nổi bật</h2>
               <CustomSlickSlider
                 SlideLayout={featuredRestaurant}
                 SlickSlideMap={testArray}
@@ -77,13 +82,14 @@ function HomePage() {
               />
             </div>
           </LazyLoadComponent>
-
           <LazyLoadComponent>
             <div>
-              <h2 className={cx("general-title", "mb-10")}>New Restaurant</h2>
+              <h2 className={cx("general-title", "mb-10")}>Nhà hàng mới</h2>
               <div className="flex flex-wrap gap-6 mb-4">
                 {dataNewRestaurant.map((item, index) => (
-                  <NewRestaurant key={index} />
+                  <div style={{ width: 382 }}>
+                    <NewRestaurant key={index} />
+                  </div>
                 ))}
               </div>
               <div className="flex justify-center">
@@ -104,7 +110,7 @@ function HomePage() {
         <div className={cx("recently", "py-10")}>
           <LazyLoadComponent>
             <div className={cx("recently-viewed")}>
-              <h2 className={cx("general-title", "mb-10")}>Recently Viewed</h2>
+              <h2 className={cx("general-title", "mb-10")}>Xem gần đây</h2>
               <CustomSlickSlider
                 SlideLayout={recentlyViewedRestaurants}
                 SlickSlideMap={testArray}

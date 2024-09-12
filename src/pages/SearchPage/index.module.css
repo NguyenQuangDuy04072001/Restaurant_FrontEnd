@@ -1,6 +1,7 @@
 .container {
-  padding: 32px 0 64px;
+  padding: 32px 0 0;
 }
+
 .content {
   max-width: 1206px;
   margin: 0 auto;
@@ -25,12 +26,13 @@
 
 .content-left {
   width: 284px;
-  height: auto;
+  height: fit-content;
   background: var(--white);
   border: 0.5px solid var(--gray4);
   border-radius: 16px;
   overflow: hidden;
 }
+
 .content-left-title {
   font-size: 18px;
   font-weight: 700;
@@ -47,11 +49,55 @@
 .rotate-minus90 {
   transform: rotate(-90deg);
 }
+
 .rotate-90 {
   transform: rotate(90deg);
 }
 
-/* Search item component */
+.pagination .pagination-item {
+  border: 1.5px solid var(--gray7);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .pagination-active {
+  border: none;
+  background: var(--primary);
+  color: white;
+}
+
+.restaurants_around-item {
+  width: 180px;
+}
+
+.restaurants_around-img {
+  width: auto;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.recently {
+  background: #E8F4FC;
+}
+
+.recently-viewed {
+  max-width: 1206px;
+  margin: 0 auto;
+}
+
+.general-title{
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 42px;
+}
+
+/* ------------------ Search item component ------------------ */
 .item {
   border: .5px solid var(--gray4);
   border-radius: 8px;
@@ -59,12 +105,22 @@
   display: flex;
   width: auto;
 }
+
 .item_image {
-  width: 386px;
+  width: 44%;
+}
+.image {
   height: 241px;
   border-radius: 8px;
   overflow: hidden;
   margin-right: 16px;
+}
+
+.info {
+  width: 54%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .info-head span {
@@ -73,4 +129,13 @@
   width: fit-content;
   padding: 4px 8px;
   border-radius: 8px;
+}
+
+.dialog {
+  z-index: 1;
+  display: none;
+}
+
+.hover_dialog:hover .dialog{
+  display: block;
 }

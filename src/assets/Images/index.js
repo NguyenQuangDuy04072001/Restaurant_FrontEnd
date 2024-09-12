@@ -15,10 +15,15 @@ import FamilyAndOfficemeals from "./Family-&-office-meals.png";
 import StreetsCuisine from "./Streets-cuisine.png";
 import BunAndPho from "./Bun-&-Pho.png";
 import Fastfood from "./Fastfood.png";
-
 import SlickLeft from "./SlickLeft.png";
 import SlickRight from "./SlickRight.png";
 import ItemPng from "./item.png";
+import Menu from "./menu.png";
+import Menu1 from "./menu1.png";
+import Menu2 from "./menu2.png";
+import Menu3 from "./menu3.png";
+import Map from "./map.png"
+
 
 export {
   banner,
@@ -41,4 +46,5 @@ export {
   BunAndPho,
   Fastfood,
   ItemPng,
+  Menu, Menu1, Menu2, Menu3, Map,
 };

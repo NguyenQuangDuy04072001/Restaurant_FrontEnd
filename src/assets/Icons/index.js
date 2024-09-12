@@ -16,6 +16,9 @@ import BusinessplanIcon from "./BusinessplanIcon";
 import ShredderIcon from "./ShredderIcon";
 import MedalIcon from "./MedalIcon";
 import InfoCircleIcon from "./InfoCircleIcon";
+import AlarmIcon from "./AlarmIcon";
+import CoinIcon from "./CoinIcon";
+import PhotoIcon from "./PhotoIcon";
 
 export {
   HelpIcon,
@@ -35,5 +38,8 @@ export {
   BusinessplanIcon,
   ShredderIcon,
   MedalIcon,
-  InfoCircleIcon
+  InfoCircleIcon,
+  AlarmIcon,
+  CoinIcon,
+  PhotoIcon,
 };

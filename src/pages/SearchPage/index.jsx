@@ -24,6 +24,10 @@ import {
   reviews,
 } from "~/contants/contants";
 import SearchItem from "./components/SearchItem";
+import { ItemPng } from "~/assets/Images";
+import CustomSlickSlider from "~/components/CustomSlickSlider";
+import { NewRestaurant } from "../Home/components";
+import LazyLoadComponent from "~/components/LazyLoadComponent";
 
 const cx = classNames.bind(styles);
 
@@ -49,6 +53,33 @@ function SearchPage() {
     }));
   };
 
+  const testArray = [1, 2, 3, 4, 5, 6];
+  const restaurantsAround = ({ item }) => (
+    <div className={cx("restaurants_around", "mx-2")}>
+      <div className={cx("restaurants_around-item")}>
+        <div className={cx("restaurants_around-img", "mb-4")}>
+          <img src={ItemPng} alt="" />
+        </div>
+        <p className="text-lg font-bold mb-2 ellipsis2">
+          Richico Apartments And Hotel
+        </p>
+        <span>14 m</span>
+      </div>
+    </div>
+  );
+
+  const recentlyViewedRestaurants = ({ item }) => (
+    <div style={{ width: 284 }}>
+      <NewRestaurant
+        heartIcon={false}
+        types={false}
+        serviceOptions={false}
+        price={false}
+        customCss={false}
+      />
+    </div>
+  );
+
   return (
     <div className={cx("container", "background")}>
       <div className={cx("content")}>
@@ -69,7 +100,7 @@ function SearchPage() {
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex mb-16">
           <div className={cx("content-left", "mr-6")}>
             <div className={cx("flex items-center p-4 gap-2", "border-b")}>
               <FilterIcon />
@@ -257,7 +288,7 @@ function SearchPage() {
               )}
             </div>
 
-            <div className={cx("p-4", "border-b")}>
+            <div className={cx("p-4")}>
               <LableSidebar
                 title="Meal"
                 icon={<MedalIcon />}
@@ -280,11 +311,52 @@ function SearchPage() {
             </div>
           </div>
           <div className={cx("content-right")}>
-            <div className={cx('search-item')}>
-              <SearchItem />
+            <div className={cx("flex flex-col gap-7")}>
+              {Array.from({ length: 10 }).map((_, index) => (
+                <SearchItem key={index} />
+              ))}
+            </div>
+            <div className={cx("pagination", "flex gap-6 justify-end mt-10")}>
+              <div className={cx("pagination-item")}>
+                <ChevronIcon />
+              </div>
+              <div className={cx("pagination-item", "pagination-active")}>
+                1
+              </div>
+              <div className={cx("pagination-item")}>2</div>
+              <div className={cx("pagination-item")}>3</div>
+              <div className={cx("pagination-item")}>
+                <ChevronIcon />
+              </div>
             </div>
           </div>
         </div>
+
+        <div>
+          <h2 className="text-4xl font-bold mb-10">
+            Restaurants around the Homestay
+          </h2>
+          <CustomSlickSlider
+            SlideLayout={restaurantsAround}
+            SlickSlideMap={testArray}
+            slidesToShow={6}
+            slidesToScroll={1}
+          />
+        </div>
+      </div>
+
+      <div className={cx("recently", "py-10 mt-16")}>
+        <LazyLoadComponent>
+          <div className={cx("recently-viewed")}>
+            <h2 className={cx("general-title", "mb-10")}>Recently Viewed</h2>
+            <CustomSlickSlider
+              SlideLayout={recentlyViewedRestaurants}
+              SlickSlideMap={testArray}
+              slidesToShow={4}
+              slidesToScroll={1}
+            />
+          </div>
+        </LazyLoadComponent>
       </div>
     </div>
   );
