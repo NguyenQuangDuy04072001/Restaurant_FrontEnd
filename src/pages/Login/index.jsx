@@ -1,100 +1,83 @@
 import classNames from "classnames/bind";
 import styles from "./index.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faGooglePlusG,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFacebookF,
+//   faGooglePlusG,
+//   faLinkedinIn,
+// } from "@fortawesome/free-brands-svg-icons";
+import backgroundImage from "~/assets/Images/login.png";
+import { EyeIcon, EyeOffIcon } from "~/assets/Icons";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 function LoginPage() {
-  const [isRightPanelActive, setIsRightPanelActive] = useState(false);
 
-  // Hàm xử lý khi click vào nút Sign Up
-  const handleSignUpClick = () => {
-    setIsRightPanelActive(true);
-  };
+  const [eye, setEye] = useState(true);
 
-  // Hàm xử lý khi click vào nút Sign In
-  const handleSignInClick = () => {
-    setIsRightPanelActive(false);
+  const handleEyeClick = () => {
+    setEye(!eye);
   };
 
   return (
-    <div className={cx('body')}>
+    <div className={cx("container")}>
       <div
-        className={cx("container", {
-          "right-panel-active": isRightPanelActive,
-        })}
+        className={cx("content")}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <div className={cx("form-container", "sign-up-container")}>
-          <form action="#">
-            <h1 className={cx("h1")}>Create Account</h1>
-            <div className={cx("social-container")}>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faFacebookF} />
-              </div>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faGooglePlusG} />
-              </div>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </div>
-            </div>
-            <span className={cx('span')}>or use your email for registration</span>
-            <input className={cx('input')} type="text" placeholder="Name" />
-            <input className={cx('input')} type="email" placeholder="Email" />
-            <input className={cx('input')} type="password" placeholder="Password" />
-            <button className={cx("button")}>Sign Up</button>
-          </form>
-        </div>
-
-        <div className={cx("form-container", "sign-in-container")}>
-          <form action="#">
-            <h1 className={cx("h1")}>Sign in</h1>
-            <div className={cx("social-container")}>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faFacebookF} />
-              </div>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faGooglePlusG} />
-              </div>
-              <div className={cx("social")}>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </div>
-            </div>
-            <span className={cx('span')}>or use your account</span>
-            <input className={cx('input')} type="email" placeholder="Email" />
-            <input className={cx('input')} type="password" placeholder="Password" />
-            <a href="/">Forgot your password?</a>
-            <button className={cx("button")}>Sign In</button>
-          </form>
-        </div>
-
-        <div className={cx("overlay-container")}>
-          <div className={cx("overlay")}>
-            <div className={cx("overlay-panel", "overlay-left")}>
-              <h1 className={cx("h1")}>Welcome Back!</h1>
-              <p className={cx("p-txt")}>
-                To keep connected with us please login with your personal info
-              </p>
-              <button className={cx("ghost")} onClick={handleSignInClick}>
-                Sign In
-              </button>
-            </div>
-            <div className={cx("overlay-panel", "overlay-right")}>
-              <h1 className={cx("h1")}>Hello, Friend!</h1>
-              <p className={cx("txt")}>
-                Enter your personal details and start journey with us
-              </p>
-              <button className={cx("button","ghost")} onClick={handleSignUpClick}>
-                Sign Up
-              </button>
+        <div className="w-1/2 flex items-center justify-center">
+          <div className={cx("body", "flex flex-col items-center gap-6")}>
+            <p className="text-lg">Bạn chưa có tài khoản?</p>
+            <div className={cx("body-btn")}>
+              <Link to="/register">Đăng ký</Link>
             </div>
           </div>
+        </div>
+        <div className={cx("layout")}>
+          <h3 className="text-lg font-bold">Đăng nhập hệ thống</h3>
+          <form>
+            <div className="my-6">
+              <div className={cx("form-input", "py-2 mb-12")}>
+                <input type="text" placeholder="Email" />
+              </div>
+              <div className={cx("form-input", "py-2")}>
+                <input
+                  type={eye ? "password" : "text"}
+                  placeholder="Password"
+                />
+                <div className={cx("form-icon")} onClick={handleEyeClick}>
+                  {eye ? <EyeIcon /> : <EyeOffIcon />}
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 mb-16">
+              <div className="w-5 h-5">
+                <input type="checkbox" className="w-full h-full" />
+              </div>
+              <p>Ghi nhớ tài khoản</p>
+            </div>
+            <div className="w-full mb-10">
+              <input
+                type="button"
+                value="Đăng nhập"
+                className={cx("form-btn")}
+              />
+            </div>
+            <p
+              className={cx(
+                "font-medium text-center cursor-pointer",
+                "primary"
+              )}
+            >
+              Quên mật khẩu
+            </p>
+          </form>
         </div>
       </div>
     </div>

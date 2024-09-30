@@ -19,6 +19,8 @@ import InfoCircleIcon from "./InfoCircleIcon";
 import AlarmIcon from "./AlarmIcon";
 import CoinIcon from "./CoinIcon";
 import PhotoIcon from "./PhotoIcon";
+import EyeIcon from "./EyeIcon";
+import EyeOffIcon from "./EyeoffIcon";
 
 export {
   HelpIcon,
@@ -42,4 +44,6 @@ export {
   AlarmIcon,
   CoinIcon,
   PhotoIcon,
+  EyeIcon,
+  EyeOffIcon,
 };
