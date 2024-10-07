@@ -1,0 +1,32 @@
+.container {
+    padding: 16px;
+    border: .5px solid var(--gray4);
+    border-radius: 8px;
+    width: 48%;
+}
+
+.head-img {
+    width: 130px;
+    height: 130px;
+}
+.head-img img {
+    border-radius: 8px;
+}
+
+.body {
+    width: 72%;
+}
+.body-sub p {
+    padding: 4px;
+    background: #F4AB01;
+    border-radius: 8px;
+    width: fit-content;
+    color: #FFF;
+}
+.body-sub-second button {
+    padding: 0 23px;
+    background: var(--success);
+    height: 40px;
+    border-radius: 8px;
+    color: #FFF;
+}

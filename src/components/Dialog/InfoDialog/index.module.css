@@ -1,0 +1,41 @@
+.info {
+    background: #FFF;
+    width: 100%;
+    padding-top: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.info-head {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--gray2);
+}
+
+.avatar {
+    width: 20%;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.info-user {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 79%;
+}
+.info-user span {
+    color: var(--gray8);
+}
+
+.option {
+    border-bottom: 1px solid var(--gray2);
+}
+
+.option-item {
+    padding: 10px 16px;
+}
+
+.option-item:hover {
+    background: var(--gray2);
+}
