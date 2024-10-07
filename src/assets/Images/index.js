@@ -23,6 +23,7 @@ import Menu1 from "./menu1.png";
 import Menu2 from "./menu2.png";
 import Menu3 from "./menu3.png";
 import Map from "./map.png"
+import Avatar from "./avatar.png"
 
 
 export {
@@ -47,4 +48,5 @@ export {
   Fastfood,
   ItemPng,
   Menu, Menu1, Menu2, Menu3, Map,
+  Avatar,
 };

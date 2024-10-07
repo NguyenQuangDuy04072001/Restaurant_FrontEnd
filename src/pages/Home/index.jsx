@@ -2,18 +2,21 @@ import classNames from "classnames/bind";
 import styles from "./index.module.css";
 import { Search } from "~/components/Layouts";
 import { ItemPng, banner } from "~/assets/Images";
-import { slickSlideType } from "~/contants/contants";
 import CustomSlickSlider from "~/components/CustomSlickSlider";
 import { ArrowNarrowRight } from "~/assets/Icons";
 import { NewRestaurant } from "./components";
 import LazyLoadComponent from "~/components/LazyLoadComponent";
 import Evaluate from "../components/Evaluate";
+import { useEffect, useState } from "react";
+import businessTypeService from "~/services/BusinessType/businessTypeService";
 
 const cx = classNames.bind(styles);
 
 function HomePage() {
   const testArray = [1, 2, 3, 4, 5, 6];
   const dataNewRestaurant = [1, 2, 3, 4, 5, 6];
+
+  const [businessType, setBusinessType] = useState([])
 
   const BusinessType = ({ item }) => (
     <div className={cx("slick-item")}>
@@ -48,6 +51,19 @@ function HomePage() {
     </div>
   );
 
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const businessType = await businessTypeService.getBusinessType();
+        console.log(businessType);
+        setBusinessType(businessType)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchApi()
+  }, [])
+
   return (
     <div className={cx("home")}>
       <LazyLoadComponent>
@@ -67,7 +83,7 @@ function HomePage() {
           <div>
             <CustomSlickSlider
               SlideLayout={BusinessType}
-              SlickSlideMap={slickSlideType}
+              SlickSlideMap={businessType}
             />
           </div>
 
@@ -87,8 +103,8 @@ function HomePage() {
               <h2 className={cx("general-title", "mb-10")}>Nhà hàng mới</h2>
               <div className="flex flex-wrap gap-6 mb-4">
                 {dataNewRestaurant.map((item, index) => (
-                  <div style={{ width: 382 }}>
-                    <NewRestaurant key={index} />
+                  <div style={{ width: 382 }} key={index} >
+                    <NewRestaurant />
                   </div>
                 ))}
               </div>
