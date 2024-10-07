@@ -1,4 +1,4 @@
-const ArrowNarrowRight = ({ width = 24, height = 24 }) => {
+const ArrowNarrowRight = ({ width = 24, height = 24, color = "#136397" }) => {
   return (
     <svg
       width={width}
@@ -9,21 +9,21 @@ const ArrowNarrowRight = ({ width = 24, height = 24 }) => {
       <g clipPath="url(#clip0_1003_68643)">
         <path
           d="M4 12L18 12"
-          stroke="#136397"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M16 16L20 12"
-          stroke="#136397"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M16 8L20 12"
-          stroke="#136397"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

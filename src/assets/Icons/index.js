@@ -21,6 +21,11 @@ import CoinIcon from "./CoinIcon";
 import PhotoIcon from "./PhotoIcon";
 import EyeIcon from "./EyeIcon";
 import EyeOffIcon from "./EyeoffIcon";
+import ArrowIcon from "./ArrowIcon";
+import MessageQuestionIcon from "./MessageQuestionIcon";
+import KeyIcon from "./KeyIcon";
+import LogoutIcon from "./LogoutIcon";
+import TranshCanIcon from "./TranshCanIcon";
 
 export {
   HelpIcon,
@@ -46,4 +51,9 @@ export {
   PhotoIcon,
   EyeIcon,
   EyeOffIcon,
+  ArrowIcon,
+  MessageQuestionIcon,
+  KeyIcon,
+  LogoutIcon,
+  TranshCanIcon,
 };

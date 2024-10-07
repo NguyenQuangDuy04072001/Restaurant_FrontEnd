@@ -29,7 +29,7 @@ const CustomSlickSlider = React.memo(
 
 CustomSlickSlider.propTypes = {
   SlideLayout: PropTypes.elementType,
-  SlickSlideMap: PropTypes.arrayOf(PropTypes.element).isRequired,
+  SlickSlideMap: PropTypes.arrayOf(PropTypes.any).isRequired,
   dots: PropTypes.bool,
 };
 
